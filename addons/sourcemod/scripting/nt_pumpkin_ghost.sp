@@ -8,6 +8,7 @@
 #define COLLISION_NONE 0
 #define ATTACH_POINT "eyes"
 // Attach the pumpkin below client eyes, so it doesn't block their vision
+#define PUMPKIN_ALPHA 32
 #define ATTACH_Z_OFFSET -32.0
 #define EF_NODRAW 0x020
 
@@ -165,7 +166,7 @@ public void OnMapStart()
 void GetPumpkinColor(int color[4])
 {
 	// RENDER_TRANSCOLOR: c*a+dest*(1-a)
-	color = { 0, 255, 212, 24 };
+	color = { 0, 255, 212, PUMPKIN_ALPHA };
 }
 
 void GetTrailColor(int client, int color[4])
