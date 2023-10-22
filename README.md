@@ -1,7 +1,7 @@
 # sourcemod-nt-pumpkin-ghost
 Halloween plugin for Neotokyo. Show dead players as spooky pumpkins floating around the maps.
 
-![pumpkin_ghost_example](https://github.com/Rainyan/sourcemod-nt-pumpkin-ghost/assets/6595066/195bff88-1e7d-42c1-8dd9-60c558a41d3f)
+![pumpkin_ghost_example](https://github.com/Rainyan/sourcemod-nt-pumpkin-ghost/assets/6595066/d5faa64f-0589-459a-858a-bd5275f3859e)
 
 ## Requirements
 * SourceMod 1.11 or newer
