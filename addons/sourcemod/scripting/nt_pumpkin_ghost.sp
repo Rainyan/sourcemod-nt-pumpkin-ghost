@@ -160,7 +160,7 @@ public void OnMapStart()
 	AddFileToDownloadsTable("materials/models/pumpkin/pumpkin.vtf");
 	AddFileToDownloadsTable("materials/models/pumpkin/pumpkin_illum.vtf");
 
-	PrecacheGeneric("materials/sprites/smoke.vmt");
+	PrecacheGeneric("materials/sprites/smoke.vmt"); // TODO: is this needed??
 }
 
 void GetPumpkinColor(int color[4])
