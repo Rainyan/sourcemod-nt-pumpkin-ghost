@@ -3,7 +3,7 @@
 
 #include <neotokyo>
 
-#define PLUGIN_VERSION "0.1.0"
+#define PLUGIN_VERSION "0.1.1"
 
 #define COLLISION_NONE 0
 #define ATTACH_POINT "eyes"
@@ -72,6 +72,10 @@ public void OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
 	{
 		ThrowError("Failed to dispatch KeyValue");
 	}
+	if (!DispatchKeyValueInt(ent, "solid", COLLISION_NONE))
+	{
+		ThrowError("Failed to dispatch KeyValue");
+	}
 	if (!DispatchSpawn(ent))
 	{
 		ThrowError("Failed to dispatch spawn");
@@ -90,10 +94,6 @@ public void OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
 		ThrowError("Failed to create entity");
 	}
 	if (!DispatchKeyValue(st, "spritename", "materials/sprites/smoke.vmt"))
-	{
-		ThrowError("Failed to dispatch KeyValue");
-	}
-	if (!DispatchKeyValueInt(st, "solid", COLLISION_NONE))
 	{
 		ThrowError("Failed to dispatch KeyValue");
 	}
