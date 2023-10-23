@@ -3,16 +3,17 @@
 
 #include <neotokyo>
 
-#define PLUGIN_VERSION "0.1.1"
+#define PLUGIN_VERSION "0.2.0"
 
 #define COLLISION_NONE 0
 #define ATTACH_POINT "eyes"
-#define PUMPKIN_ALPHA 32 // How transparent should the ghastly pumpkin be. Value in range 0-255, with 0=fully transparent, 255=fully opaque.
 #define ATTACH_Z_OFFSET -32.0 // Attach the pumpkin below client eyes, so it doesn't block their vision
 #define EF_NODRAW 0x020
 
 static int _pumpkins[NEO_MAXPLAYERS + 1] = { INVALID_ENT_REFERENCE, ... };
 static int _trails[NEO_MAXPLAYERS + 1] = { INVALID_ENT_REFERENCE, ... };
+
+ConVar _alpha;
 
 public Plugin myinfo = {
 	name = "NT Pumpkin Ghosts",
@@ -31,6 +32,9 @@ public void OnPluginStart()
 	{
 		SetFailState("Failed to hook event");
 	}
+
+	_alpha = CreateConVar("nt_pumpkin_ghost_alpha", "32",
+		"Alpha transparency of the pumpkin ghosts.", _, true, 0.0, true, 255.0);
 }
 
 public void OnClientDisconnect(int client)
@@ -165,21 +169,36 @@ public void OnMapStart()
 void GetPumpkinColor(int color[4])
 {
 	// RENDER_TRANSCOLOR: c*a+dest*(1-a)
-	color = { 0, 255, 212, PUMPKIN_ALPHA };
+	color[0] = 0;
+	color[1] = 255;
+	color[2] = 212;
+	color[3] = _alpha.IntValue;
 }
 
 void GetTrailColor(int client, int color[4])
 {
-#define ALPHA 32
-	switch (GetClientTeam(client))
+	int team = GetClientTeam(client);
+
+	if (team == TEAM_JINRAI)
 	{
-		case TEAM_JINRAI:
-			color = { 158, 255, 117, ALPHA };
-		case TEAM_NSF:
-			color = { 0, 148, 255, ALPHA };
-		default:
-			color = { 255, 106, 0, ALPHA };
+		color[0] = 158;
+		color[1] = 255;
+		color[2] = 177;
 	}
+	else if (team == TEAM_NSF)
+	{
+		color[0] = 0;
+		color[1] = 148;
+		color[2] = 255;
+	}
+	else
+	{
+		color[0] = 255;
+		color[1] = 106;
+		color[2] = 0;
+	}
+
+	color[3] = _alpha.IntValue;
 }
 
 void AttachPropToClient(int client, const char[] attachment_name, int prop,
