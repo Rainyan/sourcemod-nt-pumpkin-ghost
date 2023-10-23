@@ -297,7 +297,7 @@ bool AddEffects(int ent, int effects)
 	return true;
 }
 
-// Engine call for AddEffects.
+// Engine call for RemoveEffects.
 // Skips if the effects bits were already unset.
 // Returns false if bits were already unset, true otherwise.
 bool RemoveEffects(int ent, int effects)
