@@ -7,9 +7,8 @@
 
 #define COLLISION_NONE 0
 #define ATTACH_POINT "eyes"
-// Attach the pumpkin below client eyes, so it doesn't block their vision
 #define PUMPKIN_ALPHA 32
-#define ATTACH_Z_OFFSET -32.0
+#define ATTACH_Z_OFFSET -32.0 // Attach the pumpkin below client eyes, so it doesn't block their vision
 #define EF_NODRAW 0x020
 
 static int _pumpkins[NEO_MAXPLAYERS + 1] = { INVALID_ENT_REFERENCE, ... };
