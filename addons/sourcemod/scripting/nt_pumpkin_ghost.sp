@@ -272,7 +272,7 @@ public Action OnPlayerRunCmd(int client)
 
 // Server call for AddEffects.
 // Skips if the effects bits were already set.
-// Returns false if bits were already set, true otherwise.
+// Returns whether bits were changed.
 bool AddEffects(int ent, int effects)
 {
 	if (GetEntProp(ent, Prop_Send, "m_fEffects") & effects)
@@ -299,7 +299,7 @@ bool AddEffects(int ent, int effects)
 
 // Server call for RemoveEffects.
 // Skips if the effects bits were already unset.
-// Returns false if bits were already unset, true otherwise.
+// Returns whether bits were changed.
 bool RemoveEffects(int ent, int effects)
 {
 	if (!(GetEntProp(ent, Prop_Send, "m_fEffects") & effects))
