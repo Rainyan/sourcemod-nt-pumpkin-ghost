@@ -7,7 +7,7 @@
 
 #define COLLISION_NONE 0
 #define ATTACH_POINT "eyes"
-#define PUMPKIN_ALPHA 32
+#define PUMPKIN_ALPHA 32 // How transparent should the ghastly pumpkin be. Value in range 0-255, with 0=fully transparent, 255=fully opaque.
 #define ATTACH_Z_OFFSET -32.0 // Attach the pumpkin below client eyes, so it doesn't block their vision
 #define EF_NODRAW 0x020
 
