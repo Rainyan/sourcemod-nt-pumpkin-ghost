@@ -9,5 +9,9 @@ Halloween plugin for Neotokyo. Show dead players as spooky pumpkins floating aro
 * The pumpkin model/texture assets from the nt-festive-decorations repository must be installed on the server; please see [the related README document](https://github.com/Rainyan/nt-festive-decorations/tree/master/nt-halloween-decorations#installation) for installation instructions.
 Note that you only need the art assets, there's no need to set up the config files just for this plugin.
 
+## Config
+### Cvars
+* `nt_pumpkin_ghost_alpha` Alpha transparency of the pumpkin ghosts. Min: 0, Max: 255, Default: 32
+
 ## Acknowledgements
 * Pumpkin 3D models and texture assets made by John Kaz, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
