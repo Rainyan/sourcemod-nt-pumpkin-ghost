@@ -270,7 +270,7 @@ public Action OnPlayerRunCmd(int client)
 	return Plugin_Continue;
 }
 
-// Engine call for AddEffects.
+// Server call for AddEffects.
 // Skips if the effects bits were already set.
 // Returns false if bits were already set, true otherwise.
 bool AddEffects(int ent, int effects)
@@ -297,7 +297,7 @@ bool AddEffects(int ent, int effects)
 	return true;
 }
 
-// Engine call for RemoveEffects.
+// Server call for RemoveEffects.
 // Skips if the effects bits were already unset.
 // Returns false if bits were already unset, true otherwise.
 bool RemoveEffects(int ent, int effects)
