@@ -11,7 +11,12 @@ Note that you only need the art assets, there's no need to set up the config fil
 
 ## Config
 ### Cvars
-* `nt_pumpkin_ghost_alpha` Alpha transparency of the pumpkin ghosts. Min: 0, Max: 255, Default: 32
+* nt_pumpkin_ghost_alpha
+  * Default value: `32`
+  * Description: `Alpha transparency of the pumpkin ghosts.`
+  * Min: `0.0`
+  * Max: `255.0`
+
 
 ## Acknowledgements
 * Pumpkin 3D models and texture assets made by John Kaz, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
